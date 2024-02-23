@@ -69,7 +69,7 @@ const selectFiles = (options?: Options) =>
     const input = createInputFile(options);
 
     input.addEventListener('change', () => resolve(input.files || null));
-
+    input.addEventListener("cancel",()=>resolve(null))
     setTimeout(() => {
       const event = new MouseEvent('click');
       input.dispatchEvent(event);
